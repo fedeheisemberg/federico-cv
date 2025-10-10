@@ -1,684 +1,125 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Federico Martinez </title><style>
-/* cspell:disable-file */
-/* webkit printing magic: print all background colors */
-html {
-	-webkit-print-color-adjust: exact;
-}
-* {
-	box-sizing: border-box;
-	-webkit-print-color-adjust: exact;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
-	}
-}
-
-body {
-	line-height: 1.5;
-	white-space: pre-wrap;
-}
-
-a,
-a.visited {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.pdf-relative-link-path {
-	font-size: 80%;
-	color: #444;
-}
-
-h1,
-h2,
-h3 {
-	letter-spacing: -0.01em;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.page-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 0.75em;
-}
-
-h1 {
-	font-size: 1.875rem;
-	margin-top: 1.875rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-h3 {
-	font-size: 1.25rem;
-	margin-top: 1.25rem;
-}
-
-.source {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 1.5em;
-	word-break: break-all;
-}
-
-.callout {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
-figure {
-	margin: 1.25em 0;
-	page-break-inside: avoid;
-}
-
-figcaption {
-	opacity: 0.5;
-	font-size: 85%;
-	margin-top: 0.5em;
-}
-
-mark {
-	background-color: transparent;
-}
-
-.indented {
-	padding-left: 1.5em;
-}
-
-hr {
-	background: transparent;
-	display: block;
-	width: 100%;
-	height: 1px;
-	visibility: visible;
-	border: none;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-img {
-	max-width: 100%;
-}
-
-@media only print {
-	img {
-		max-height: 100vh;
-		object-fit: contain;
-	}
-}
-
-@page {
-	margin: 1in;
-}
-
-.collection-content {
-	font-size: 0.875rem;
-}
-
-.column-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.column {
-	padding: 0 1em;
-}
-
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
-}
-
-.table_of_contents-item {
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.3;
-	padding: 0.125rem;
-}
-
-.table_of_contents-indent-1 {
-	margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-	margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-	margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-	text-decoration: none;
-	opacity: 0.7;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
-
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
-
-table {
-	border-left: none;
-	border-right: none;
-}
-
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-th {
-	color: rgba(55, 53, 47, 0.6);
-}
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
-
-ul.to-do-list {
-	padding-inline-start: 0;
-}
-
-ul.to-do-list > li {
-	list-style: none;
-}
-
-.to-do-children-checked {
-	text-decoration: line-through;
-	opacity: 0.375;
-}
-
-ul.toggle > li {
-	list-style: none;
-}
-
-ul {
-	padding-inline-start: 1.7em;
-}
-
-ul > li {
-	padding-left: 0.1em;
-}
-
-ol {
-	padding-inline-start: 1.6em;
-}
-
-ol > li {
-	padding-left: 0.2em;
-}
-
-.mono ol {
-	padding-inline-start: 2em;
-}
-
-.mono ol > li {
-	text-indent: -0.4em;
-}
-
-.toggle {
-	padding-inline-start: 0em;
-	list-style-type: none;
-}
-
-/* Indent toggle children */
-.toggle > li > details {
-	padding-left: 1.7em;
-}
-
-.toggle > li > details > summary {
-	margin-left: -1.1em;
-}
-
-.selected-value {
-	display: inline-block;
-	padding: 0 0.5em;
-	background: rgba(206, 205, 202, 0.5);
-	border-radius: 3px;
-	margin-right: 0.5em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-	white-space: nowrap;
-}
-
-.collection-title {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-.page-description {
-	margin-bottom: 2em;
-}
-
-.simple-table {
-	margin-top: 1em;
-	font-size: 0.875rem;
-	empty-cells: show;
-}
-.simple-table td {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table th {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table-header-color {
-	background: rgb(247, 246, 243);
-	color: black;
-}
-.simple-table-header {
-	font-weight: 500;
-}
-
-time {
-	opacity: 0.5;
-}
-
-.icon {
-	display: inline-block;
-	max-width: 1.2em;
-	max-height: 1.2em;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	margin-right: 0.5em;
-}
-
-img.icon {
-	border-radius: 3px;
-}
-
-.user-icon {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 100%;
-	margin-right: 0.5rem;
-}
-
-.user-icon-inner {
-	font-size: 0.8em;
-}
-
-.text-icon {
-	border: 1px solid #000;
-	text-align: center;
-}
-
-.page-cover-image {
-	display: block;
-	object-fit: cover;
-	width: 100%;
-	max-height: 30vh;
-}
-
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-}
-
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
-}
-
-.link-to-page {
-	margin: 1em 0;
-	padding: 0;
-	border: none;
-	font-weight: 500;
-}
-
-p > .user {
-	opacity: 0.5;
-}
-
-td > .user,
-td > time {
-	white-space: nowrap;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
-	vertical-align: middle;
-}
-
-p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.image {
-	border: none;
-	margin: 1.5em 0;
-	padding: 0;
-	border-radius: 0;
-	text-align: center;
-}
-
-.code,
-code {
-	background: rgba(135, 131, 120, 0.15);
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
-	border-radius: 3px;
-	font-size: 85%;
-	tab-size: 2;
-}
-
-code {
-	color: #eb5757;
-}
-
-.code {
-	padding: 1.5em 1em;
-}
-
-.code-wrap {
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.code > code {
-	background: none;
-	padding: 0;
-	font-size: 100%;
-	color: inherit;
-}
-
-blockquote {
-	font-size: 1.25em;
-	margin: 1em 0;
-	padding-left: 1em;
-	border-left: 3px solid rgb(55, 53, 47);
-}
-
-.bookmark {
-	text-decoration: none;
-	max-height: 8em;
-	padding: 0;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
-
-.bookmark-title {
-	font-size: 0.85em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 1.75em;
-	white-space: nowrap;
-}
-
-.bookmark-text {
-	display: flex;
-	flex-direction: column;
-}
-
-.bookmark-info {
-	flex: 4 1 180px;
-	padding: 12px 14px 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.bookmark-image {
-	width: 33%;
-	flex: 1 1 180px;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	border-radius: 1px;
-}
-
-.bookmark-description {
-	color: rgba(55, 53, 47, 0.6);
-	font-size: 0.75em;
-	overflow: hidden;
-	max-height: 4.5em;
-	word-break: break-word;
-}
-
-.bookmark-href {
-	font-size: 0.75em;
-	margin-top: 0.25em;
-}
-
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
-.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
-.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
-.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
-.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.highlight-default {
-	color: rgba(50, 48, 44, 1);
-}
-.highlight-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.highlight-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.highlight-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.highlight-default_background {
-	color: rgba(50, 48, 44, 1);
-}
-.highlight-gray_background {
-	background: rgba(248, 248, 247, 1);
-}
-.highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.highlight-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.highlight-purple_background {
-	background: rgba(248, 243, 252, 1);
-}
-.highlight-pink_background {
-	background: rgba(252, 241, 246, 1);
-}
-.highlight-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.block-color-default {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.block-color-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.block-color-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.block-color-default_background {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray_background {
-	background: rgba(248, 248, 247, 1);
-}
-.block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.block-color-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.block-color-purple_background {
-	background: rgba(248, 243, 252, 1);
-}
-.block-color-pink_background {
-	background: rgba(252, 241, 246, 1);
-}
-.block-color-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.select-value-color-uiBlue { background-color: undefined; }
-.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
-.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
-.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
-.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
-.select-value-color-transparentGray { background-color: undefined; }
-.select-value-color-translucentGray { background-color: undefined; }
-.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
-.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
-.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
-.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
-.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
-.select-value-color-pageGlass { background-color: undefined; }
-.select-value-color-washGlass { background-color: undefined; }
-
-.checkbox {
-	display: inline-flex;
-	vertical-align: text-bottom;
-	width: 16;
-	height: 16;
-	background-size: 16px;
-	margin-left: 2px;
-	margin-right: 5px;
-}
-
-.checkbox-on {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.checkbox-off {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-	
-</style></head><body><article id="1e578e6e-dadf-8059-98ae-d9262d03dd3a" class="page sans"><header><h1 class="page-title">Federico Martinez </h1><p class="page-description"></p></header><div class="page-body"><p id="1e678e6e-dadf-8035-95b0-fd889ab0bc22" class="">📍 Progreso 449 Este, Rawson, San Juan, Argentina</p><p id="1e678e6e-dadf-804d-9548-f519ea386492" class="">📞 +549 2645802870 | ✉️ <a href="mailto:fedemarti0107@gmail.com">fedemarti0107@gmail.com</a></p><p id="1e678e6e-dadf-80ec-bbd4-da18e9ed1d15" class=""><a href="https://www.linkedin.com/in/federicoluismartinez/">LinkedIn</a> | <a href="https://fede-martinez-portfolio.vercel.app/">Portfolio</a> | <a href="https://github.com/fedeheisemberg">GitHub</a> | <a href="https://www.youtube.com/@FedeMartinezQuantFinance">YouTube</a></p><hr id="1e678e6e-dadf-80e3-9b92-cb01ae875458"/><h3 id="1e678e6e-dadf-8084-a04c-cd9c631b1ef4" class=""><strong>RESUMEN PROFESIONAL</strong></h3><p id="1e678e6e-dadf-802a-82a1-eee46185e785" class="">Estudiante avanzado de <strong>Administración de Empresas</strong> con enfoque en <strong>Business Intelligence, análisis de datos y automatización de procesos</strong>. Experiencia desarrollando soluciones de datos aplicadas a la toma de decisiones. Capacidad demostrada para <strong>resolver problemas de negocio usando Python, SQL y Tableau</strong>. Interés en roles que conecten negocio y tecnología. Disponible <strong>full-time</strong>.</p><hr id="1e678e6e-dadf-808d-a81c-f1c0bbd8b52c"/><h3 id="1e678e6e-dadf-80b1-a9d4-d67336ead377" class=""><strong>EXPERIENCIA RELEVANTE</strong></h3><h3 id="1e678e6e-dadf-80d7-a93b-c2f3a5d26847" class=""><strong>Analista y Cofundador</strong></h3><p id="1e678e6e-dadf-8044-a98e-d0939693c0e6" class=""><strong>Optima - Consulting &amp; Management LLC</strong> | 🗓️ Abr 2023 - Ene 2025</p><ul id="1e678e6e-dadf-80a0-ad33-f44ac662c9f4" class="bulleted-list"><li style="list-style-type:disc">📊 Diseño de dashboards financieros y de negocio, reduciendo el tiempo de análisis en un 50%.</li></ul><ul id="1e678e6e-dadf-8085-a7d0-f3ef95fa1a2f" class="bulleted-list"><li style="list-style-type:disc">🤖 Automatización de reportes con <strong>Python</strong>, <strong>Google Sheets</strong> y <strong>GCP</strong>, reduciendo tareas repetitivas en un 40%.</li></ul><ul id="1e678e6e-dadf-805e-910f-c5b0633ed1ca" class="bulleted-list"><li style="list-style-type:disc">📈 Liderazgo en estrategias de datos para decisiones financieras.</li></ul><ul id="1e678e6e-dadf-8063-8020-e7ea342826a2" class="bulleted-list"><li style="list-style-type:disc"><strong>Tecnologías:</strong> Python, Tableau, Power BI, Google Suite, Trello.</li></ul><h3 id="1e678e6e-dadf-8021-ab63-f51f5f564dd3" class=""><strong>Administrativo - Optimización de Procesos</strong></h3><p id="1e678e6e-dadf-8085-a788-fa3b995d9299" class=""><strong>Agua Santa Clara</strong> | 🗓️ Ene 2023 - Abr 2023</p><ul id="1e678e6e-dadf-8059-89be-d194a9fa1476" class="bulleted-list"><li style="list-style-type:disc">📝 Automatización de tareas de facturación y control contable en <strong>Excel</strong> y <strong>Google Sheets</strong> (30% más eficiente).</li></ul><ul id="1e678e6e-dadf-808c-9bc2-dc88a0a7d6a7" class="bulleted-list"><li style="list-style-type:disc">📑 Gestión documental y atención a clientes corporativos.</li></ul><hr id="1e678e6e-dadf-8010-9f51-e4d349b38412"/><h3 id="1e678e6e-dadf-8041-8afe-eeb613668e9a" class=""><strong>EDUCACIÓN</strong></h3><p id="1e678e6e-dadf-8069-98d2-cc6d039b261e" class=""><strong>Licenciatura en Administración de Empresas</strong></p><p id="1e678e6e-dadf-80fd-a7f7-d019d4650ef4" class=""><em>Universidad de Congreso</em> | 📅 Mar 2023 - Actualidad (60.98% completado)</p><ul id="1e678e6e-dadf-8006-be63-e82eda791ec8" class="bulleted-list"><li style="list-style-type:disc">Enfoque en análisis de datos y tecnología aplicada a la gestión.</li></ul><hr id="1e678e6e-dadf-8008-887f-c9fb5f369da8"/><h3 id="1e678e6e-dadf-8052-98e5-ce34c7c35ab9" class=""><strong>CERTIFICACIONES DESTACADAS</strong></h3><ul id="1e678e6e-dadf-8016-a2c4-d1e4580fd87c" class="bulleted-list"><li style="list-style-type:disc">🎓 <strong>Google Advanced Data Analytics</strong> – Coursera</li></ul><ul id="1e678e6e-dadf-80c9-97c1-d1c63d35232f" class="bulleted-list"><li style="list-style-type:disc">🎓 <strong>Associate Data Analyst</strong> – DataCamp</li></ul><ul id="1e678e6e-dadf-80b3-9252-eea275d2fbb5" class="bulleted-list"><li style="list-style-type:disc">🎓 <strong>Data Analytics Essentials 2024</strong> – Cisco Academy<br/>Formación en <br/><strong>Python</strong>, <strong>estadística</strong>, <strong>visualización</strong>, <strong>SQL</strong>, <strong>machine learning</strong> y toma de decisiones basada en datos.</li></ul><hr id="1e678e6e-dadf-8083-a22f-fdb47dcbbc80"/><h3 id="1e678e6e-dadf-806d-a1dc-d9b150fd9cd0" class=""><strong>PROYECTOS DESTACADOS</strong></h3><ul id="1e678e6e-dadf-80e1-9285-e472de2f5465" class="bulleted-list"><li style="list-style-type:disc"><strong>Optimizador de Portfolios con Python y Streamlit</strong><p id="1e678e6e-dadf-80c3-8447-fd5f85807675" class="">Simula carteras óptimas usando <strong>Monte Carlo</strong> y <strong>Markowitz</strong>.</p><p id="1e678e6e-dadf-800d-b53f-fb25fe140dfb" class="">🔗 <a href="https://portfoliopt.streamlit.app/">App</a></p></li></ul><ul id="1e678e6e-dadf-809d-9e56-fe4867107547" class="bulleted-list"><li style="list-style-type:disc"><strong>Modelo de ML para Riesgo Crediticio</strong><p id="1e678e6e-dadf-806b-a93f-dba50cfbf26c" class="">Predicción de morosidad con <strong>árboles de decisión</strong> y <strong>Random Forest</strong>.</p><p id="1e678e6e-dadf-8058-80bf-c97172c6defc" class="">🔗 <a href="https://creditscoremodel.streamlit.app/">App</a> | <a href="https://github.com/fedeheisemberg/Proyecto---Modelado-de-Riesgo-Crediticio">Código</a></p></li></ul><ul id="1e678e6e-dadf-806b-b15c-ce8318f1d1d4" class="bulleted-list"><li style="list-style-type:disc"><strong>Sistema de Valuación de Inventarios</strong><p id="1e678e6e-dadf-80ba-85fd-c30a9232b3ac" class="">App contable interactiva para métodos <strong>FIFO</strong>, <strong>LIFO</strong> y <strong>Promedio</strong>.</p><p id="1e678e6e-dadf-80db-b858-d8e9d0db1c0b" class="">🔗 <a href="https://valuaciondeinv.streamlit.app/">App</a></p></li></ul><ul id="1e678e6e-dadf-8031-b3f0-e390e0c744ca" class="bulleted-list"><li style="list-style-type:disc"><strong>Predicción de Rotación de Empleados</strong><p id="1e678e6e-dadf-804d-8056-c8d5f73ff101" class="">Modelo de churn y dashboard en <strong>Tableau</strong> para RRHH.</p><p id="1e678e6e-dadf-803d-839a-ee6340a98b2d" class="">🔗 <a href="https://public.tableau.com/app/profile/federico.martinez3300/viz/DashboardML-HR/Dashboard1">Proyecto</a></p></li></ul><ul id="1e678e6e-dadf-802d-870a-ed60c67af24a" class="bulleted-list"><li style="list-style-type:disc"><strong>ETL Automatizado con Google Sheets API</strong><p id="1e678e6e-dadf-8085-a5f0-ec119d8cd817" class="">Pipeline automatizado de datos bursátiles desde <strong>Pyhomebroker</strong> a <strong>Google Sheets</strong>.</p><p id="1e678e6e-dadf-80f6-bedf-df11b45ba4e7" class="">🔗 <a href="https://github.com/fedeheisemberg/Proyecto---Options-Data-with-Google-Sheets">Código</a></p></li></ul><ul id="1e678e6e-dadf-8022-8e8c-c2430b3470c9" class="bulleted-list"><li style="list-style-type:disc"><strong>Dashboard de Ventas en Tableau</strong><p id="1e678e6e-dadf-806b-863c-e79ee1a8f682" class="">KPIs comerciales y análisis de desempeño.</p><p id="1e678e6e-dadf-80e0-b2c6-ff6195f2811b" class="">🔗 <a href="https://public.tableau.com/app/profile/federico.martinez3300/viz/DashboarddeVentas_17164923913100/Dashboard1">Proyecto</a></p></li></ul><ul id="1e678e6e-dadf-8083-90a0-d3f9ffb421a4" class="bulleted-list"><li style="list-style-type:disc"><strong>Análisis de Datos de Ciberseguridad con ML</strong><p id="1e678e6e-dadf-8012-9c3c-c086f5aad360" class="">Detección de intrusiones con <strong>Logística</strong>, <strong>Random Forest</strong> y <strong>XGBoost</strong>.</p><p id="1e678e6e-dadf-8060-b83b-e96873e04d51" class="">🔗 <a href="https://github.com/fedeheisemberg/Proyecto-Google-Course---Cybersec-Data-Analysis-and-ML/tree/main/ML%20for%20Intrusion%20Detection">Código</a> | <a href="https://www.youtube.com/watch?v=BdbzLm75Afs">Video</a></p></li></ul><ul id="1e678e6e-dadf-8082-8d03-cf9af69040ac" class="bulleted-list"><li style="list-style-type:disc"><strong>Sitio Web Personal (Portfolio)</strong><p id="1e678e6e-dadf-80a3-9a09-c4c5e72146a9" class="">Presentación profesional con contacto y proyectos.</p><p id="1e678e6e-dadf-80fa-95cf-f630a3eedcf4" class="">🔗 <a href="https://fede-martinez-portfolio.vercel.app/">Sitio</a></p></li></ul><hr id="1e678e6e-dadf-80f4-9781-c84eb4ebd7d1"/><h3 id="1e678e6e-dadf-8071-9f3a-c5b7d8f0de27" class=""><strong>HABILIDADES TÉCNICAS</strong></h3><ul id="1e678e6e-dadf-805c-9372-d19a72348b49" class="bulleted-list"><li style="list-style-type:disc"><strong>Lenguajes:</strong> Python, SQL, JavaScript (básico), TypeScript</li></ul><ul id="1e678e6e-dadf-8003-b8d0-f6f36e0f81df" class="bulleted-list"><li style="list-style-type:disc"><strong>Visualización:</strong> Tableau, Power BI</li></ul><ul id="1e678e6e-dadf-80c5-9562-da16039789a4" class="bulleted-list"><li style="list-style-type:disc"><strong>Gestión de datos:</strong> Excel (avanzado), SQLite, MySQL, Google Sheets API</li></ul><ul id="1e678e6e-dadf-80e0-b6ea-d9021b26d2ba" class="bulleted-list"><li style="list-style-type:disc"><strong>Cloud y automatización:</strong> GCP, Git, Trello, Notion</li></ul><ul id="1e678e6e-dadf-807b-8510-ebee09f7a8a4" class="bulleted-list"><li style="list-style-type:disc"><strong>Aprendizaje actual:</strong> Apache Airflow, AWS</li></ul><hr id="1e678e6e-dadf-8029-8987-cb9823f8c069"/><h3 id="1e678e6e-dadf-80b9-9e78-e0b27790c3cb" class=""><strong>IDIOMAS</strong></h3><ul id="1e678e6e-dadf-8011-bdc0-e4c7c972dfc6" class="bulleted-list"><li style="list-style-type:disc"><strong>Inglés avanzado (C2)</strong> – <a href="https://cert.efset.org/es/tH7DCc">Certificado EFSET</a></li></ul><hr id="1e678e6e-dadf-80ca-96ee-c40efc559acc"/><h3 id="1e678e6e-dadf-8083-a230-de7f90be22c8" class=""><strong>INTERESES PROFESIONALES</strong></h3><ul id="1e678e6e-dadf-805b-b3d0-ef5954a41555" class="bulleted-list"><li style="list-style-type:disc">Ciencia de datos aplicada a negocios</li></ul><ul id="1e678e6e-dadf-80d5-8a60-f021f4b63370" class="bulleted-list"><li style="list-style-type:disc">Business Intelligence y automatización</li></ul><ul id="1e678e6e-dadf-80a8-8601-c80bef529195" class="bulleted-list"><li style="list-style-type:disc">Finanzas cuantitativas</li></ul><ul id="1e678e6e-dadf-80b1-ae3d-f7a7f52075ae" class="bulleted-list"><li style="list-style-type:disc">Divulgación educativa (ver <a href="https://www.youtube.com/@FedeMartinezQuantFinance">YouTube</a>)</li></ul><hr id="1e678e6e-dadf-8050-bd52-e6067c52b9b7"/></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Federico Martinez | Data Analyst</title>
+  <style>
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      color: #333;
+      background-color: #fafafa;
+      margin: 0;
+      padding: 2rem;
+      max-width: 900px;
+      margin-inline: auto;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #1f2937;
+      margin-bottom: 0.5rem;
+    }
+    h1 { font-size: 2.2rem; margin-top: 0; }
+    h2 { border-bottom: 2px solid #e5e7eb; padding-bottom: 0.2rem; margin-top: 2rem; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul { padding-left: 1.2rem; }
+    li { margin-bottom: 0.3rem; }
+    .header { text-align: center; margin-bottom: 2rem; }
+    .header p { margin: 0.2rem 0; }
+    .section { margin-bottom: 1.5rem; }
+    .tagline { font-size: 1.1rem; color: #555; }
+    .links a { margin: 0 0.3rem; }
+    .emoji { font-style: normal; margin-right: 4px; }
+    hr { border: none; border-top: 1px solid #ddd; margin: 2rem 0; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <h1>Federico Martinez</h1>
+    <p>📍 Progreso 449 Este, Rawson, San Juan, Argentina</p>
+    <p>📱 +54 9 264 580 2870 | ✉️ <a href="mailto:fedemarti0107@gmail.com">fedemarti0107@gmail.com</a></p>
+    <p class="links">
+      🌐 <a href="https://www.linkedin.com/in/federicoluismartinez/">LinkedIn</a> |
+      <a href="https://fede-martinez-portfolio.vercel.app/">Portfolio</a> |
+      <a href="https://github.com/fedeheisemberg">GitHub</a> |
+      <a href="https://www.youtube.com/@FedeMartinezQuantFinance">YouTube</a>
+    </p>
+  </header>
+
+  <section class="section">
+    <h2>🧠 Resumen Profesional</h2>
+    <p><strong>Analista de Datos con enfoque en BI y Automatización de Procesos.</strong> Experiencia desarrollando soluciones de datos aplicadas a la toma de decisiones. Capacidad demostrada para <strong>resolver problemas de negocio usando Python, SQL y Tableau/Power BI</strong>. Interés en roles técnicos y de negocio. Disponible <strong>full-time</strong>.</p>
+  </section>
+
+  <section class="section">
+    <h2>💼 Experiencia Relevante</h2>
+    <h3>Data Analyst Freelancer – Fundación Sembrando Amor (Colombia) <small>| Jun 2025 - Sep 2025</small></h3>
+    <ul>
+      <li>Limpieza y carga de datos desde documentos escaneados a <strong>SQLite</strong>.</li>
+      <li>Desarrollo de app en <strong>Streamlit</strong> desplegada en <strong>Google Cloud Platform</strong>.</li>
+    </ul>
+
+    <h3>Analista y Cofundador – Optima Consulting & Management LLC <small>| Abr 2023 - Ene 2025</small></h3>
+    <ul>
+      <li>Diseño de dashboards financieros reduciendo el tiempo de análisis en un 50%.</li>
+      <li>Automatización de reportes con <strong>Python</strong>, <strong>Google Sheets</strong> y <strong>GCP</strong>.</li>
+      <li>Liderazgo en estrategias de datos para decisiones financieras.</li>
+    </ul>
+
+    <h3>Administrativo – Agua Santa Clara <small>| Ene 2023 - Abr 2023</small></h3>
+    <ul>
+      <li>Automatización de tareas contables en <strong>Excel</strong> y <strong>Google Sheets</strong>.</li>
+      <li>Gestión documental y atención a clientes corporativos.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>🚀 Proyectos Destacados</h2>
+    <ul>
+      <li><strong>Tablero de Opciones Financieras con Python y Streamlit</strong> – <a href="https://optimaoptionspro.streamlit.app/">App</a></li>
+      <li><strong>Optimizador de Portfolios (Markowitz + Monte Carlo)</strong> – <a href="https://portfoliopt.streamlit.app/">App</a></li>
+      <li><strong>Modelo ML para Riesgo Crediticio</strong> – <a href="https://creditscoremodel.streamlit.app/">App</a></li>
+      <li><strong>Predicción de Rotación de Empleados</strong> – <a href="https://public.tableau.com/app/profile/federico.martinez3300/viz/DashboardML-HR/Dashboard1">Dashboard</a></li>
+      <li><strong>ETL Automatizado con Google Sheets API</strong> – <a href="https://github.com/fedeheisemberg/Proyecto---Options-Data-with-Google-Sheets">Código</a></li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>🎓 Educación</h2>
+    <p><strong>Licenciatura en Administración de Empresas</strong><br>
+    <em>Universidad de Congreso</em> | Mar 2023 - Actualidad (88% completado)</p>
+  </section>
+
+  <section class="section">
+    <h2>🏅 Certificaciones</h2>
+    <ul>
+      <li>Google Advanced Data Analytics – Coursera</li>
+      <li>Associate Data Analyst – DataCamp</li>
+      <li>Data Analytics Essentials 2024 – Cisco Academy</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>⚙️ Habilidades Técnicas</h2>
+    <p>Python | SQL | Tableau | Power BI | Excel (avanzado) | Google Sheets API | GCP | MySQL | SQLite | Git | Trello | Notion  
+    <br><em>(Aprendiendo Apache Airflow y AWS)</em></p>
+  </section>
+
+  <section class="section">
+    <h2>🌍 Idiomas</h2>
+    <p><strong>Inglés avanzado (C2)</strong> – <a href="https://cert.efset.org/es/tH7DCc">Certificado EFSET</a></p>
+  </section>
+
+  <section class="section">
+    <h2>🎯 Intereses</h2>
+    <ul>
+      <li>Business Intelligence y automatización</li>
+      <li>Finanzas cuantitativas</li>
+      <li>Divulgación educativa (<a href="https://www.youtube.com/@FedeMartinezQuantFinance">YouTube</a>)</li>
+    </ul>
+  </section>
+
+</body>
+</html>
