@@ -2,7 +2,6 @@
 
 # **Federico Martinez**
 
-📍 Progreso 449 Este, Rawson, San Juan, Argentina
 📱 +54 9 264 580 2870 | 📧 [fedemarti0107@gmail.com](mailto:fedemarti0107@gmail.com)
 
 🌐 [LinkedIn](https://www.linkedin.com/in/federicoluismartinez/) | [Portfolio](https://fede-martinez-portfolio.vercel.app/) | [GitHub](https://github.com/fedeheisemberg) | [YouTube](https://www.youtube.com/@FedeMartinezQuantFinance)
@@ -77,9 +76,9 @@ Interés en roles técnicos y de negocio. Disponible **full-time**.
 
 ## 🏅 **Certificaciones**
 
-* **Google Advanced Data Analytics** – Coursera
-* **Associate Data Analyst** – DataCamp
-* **Data Analytics Essentials 2024** – Cisco Academy
+* **Google Advanced Data Analytics** – Coursera - 2024
+* **Associate Data Analyst** – DataCamp - 2024
+* **Data Analytics Essentials** – Cisco Academy - 2024
 
 ---
 
