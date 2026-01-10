@@ -4,7 +4,7 @@
 
 📱 +54 9 264 580 2870 | 📧 [fedemarti0107@gmail.com](mailto:fedemarti0107@gmail.com)
 
-🌐 [LinkedIn](https://www.linkedin.com/in/federicoluismartinez/) | [Portfolio](https://fede-martinez-portfolio.vercel.app/) | [GitHub](https://github.com/fedeheisemberg) | [YouTube](https://www.youtube.com/@FedeMartinezQuantFinance)
+🌐 [LinkedIn](https://www.linkedin.com/in/federicoluismartinez/) | [Portfolio](https://fede-martinez-portfolio.vercel.app/) | [GitHub](https://github.com/fedemartinez5425) | [YouTube](https://www.youtube.com/@FedeMartinezQuantFinance)
 
 ---
 
